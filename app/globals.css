@@ -1,3 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* TYPOGRAPHY STYLES */
+
+h1 {
+  @apply tex-7xl font-medium;
+}
+
+h2 {
+  @apply text-5xl;
+}
+
+h3 {
+  @apply text-2xl;
+}
+p {
+  @apply text-lg;
+}
+
+small {
+  @apply text-xs font-bold tracking-widest;
+}
