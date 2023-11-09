@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 /* COMMON STYLE */
-.section-padding {
-  @apply py-20;
+.sp {
+  @apply py-32;
 }
 
 .eq {
