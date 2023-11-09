@@ -24,7 +24,7 @@ const config: Config = {
         red: 'rgb(217,17,74)',
         'red-alpha': 'rgba(217,17,74,0.125)',
         blue: 'rgb(0,145,181)',
-        'bule-alpha': 'rgba(0,145,181,0.125)',
+        'blue-alpha': 'rgba(0,145,181,0.125)',
         gray: 'rgb(226,224,223)',
         'gray-alpha': 'rgba(226,224,223,0.125)',
         pueple: 'rgb(92,33,241)',

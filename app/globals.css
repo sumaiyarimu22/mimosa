@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Base styles */
+main {
+  @apply mt-20;
+}
+
 /* COMMON STYLE */
 .sp {
   @apply py-32;
