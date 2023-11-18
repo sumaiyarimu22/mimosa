@@ -3,7 +3,7 @@ import BeautyPackage from './_components/BeautyPackage';
 const BeautyPackagesPage = () => {
   return (
     <main>
-      <BeautyPackage />
+      <BeautyPackage native />
     </main>
   );
 };
