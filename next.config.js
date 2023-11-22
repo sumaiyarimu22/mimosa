@@ -7,6 +7,7 @@ const nextConfig = {
       'res.cloudinary.com',
       'www.pexels.com',
       ' images.remotePatterns',
+      'randomuser.me',
     ],
   },
 };

@@ -9,7 +9,7 @@ main {
 
 /* COMMON STYLE */
 .sp {
-  @apply py-32;
+  @apply py-20;
 }
 
 .eq {
