@@ -4,7 +4,7 @@ import toast from 'react-hot-toast';
 
 export const axiosPost = async (
   endpoint: string,
-  data: Pick<userType, 'email' | 'password'>,
+  data: Pick<userType, 'name' | 'photoUrl' | 'email' | 'password'>,
   token: string = ''
 ) => {
   try {
