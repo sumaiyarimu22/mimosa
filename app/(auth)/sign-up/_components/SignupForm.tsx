@@ -1,11 +1,14 @@
 'use client';
 
 import Button from '@/components/ui/Button';
+import { login } from '@/features/auth/authSlice';
 import { photoUrlChecker } from '@/helpers/photoUrlChecker';
 import { axiosPost } from '@/libs/axiosPost';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { useState, useCallback } from 'react';
 import toast from 'react-hot-toast';
+import { useDispatch } from 'react-redux';
 
 interface SignupFormData {
   name: string;
@@ -22,6 +25,8 @@ const SignupForm = () => {
     password: '',
   });
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const router = useRouter();
+  const dispatch = useDispatch();
 
   const handleSubmit = useCallback(
     async (e: React.SyntheticEvent) => {
@@ -41,7 +46,9 @@ const SignupForm = () => {
             email: '',
             password: '',
           });
+          dispatch(login(data));
           toast.success('register successfull.');
+          router.push('/');
         } else {
           setIsLoading(false);
         }
@@ -50,7 +57,7 @@ const SignupForm = () => {
         toast.error('Please past a photo url from pexels/unsplash/cloudinary');
       }
     },
-    [formData]
+    [formData, router, dispatch]
   );
 
   return (

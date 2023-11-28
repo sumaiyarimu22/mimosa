@@ -1,10 +1,13 @@
 'use client';
 
 import Button from '@/components/ui/Button';
+import { login } from '@/features/auth/authSlice';
 import { axiosPost } from '@/libs/axiosPost';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { useState, useCallback } from 'react';
 import toast from 'react-hot-toast';
+import { useDispatch } from 'react-redux';
 
 interface SignInFormData {
   email: string;
@@ -18,6 +21,9 @@ const SignInForm = () => {
   });
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
+  const router = useRouter();
+  const dispatch = useDispatch();
+
   const handleSubmit = useCallback(
     async (e: React.SyntheticEvent) => {
       e.preventDefault();
@@ -30,12 +36,14 @@ const SignInForm = () => {
           email: '',
           password: '',
         });
+        dispatch(login(data));
         toast.success('Login successfull.');
+        router.push('/');
       } else {
         setIsLoading(false);
       }
     },
-    [formData]
+    [formData, router, dispatch]
   );
 
   return (
